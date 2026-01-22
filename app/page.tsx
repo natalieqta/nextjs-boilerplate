@@ -129,9 +129,10 @@ export default function Home() {
           </label>
           <div className="flex gap-3 flex-wrap">
             {[1, 2, 3, 4, 5].map((num) => {
-              const isSelected = value.rating === String(num);
-              const baseColors = ratingColors[num as keyof typeof ratingColors];
-              const selectedColors = selectedRatingColors[num as keyof typeof selectedRatingColors];
+              const numStr = String(num);
+              const isSelected = value.rating === numStr;
+              const baseColors = ratingColors[numStr as keyof typeof ratingColors];
+              const selectedColors = selectedRatingColors[numStr as keyof typeof selectedRatingColors];
               
               return (
                 <label
@@ -151,7 +152,7 @@ export default function Home() {
                   />
                   <span className="text-3xl font-bold mb-1">{num}</span>
                   <span className="text-xs font-medium mt-1 text-center px-2 leading-tight">
-                    {ratingLabels[num as keyof typeof ratingLabels]}
+                    {ratingLabels[numStr as keyof typeof ratingLabels]}
                   </span>
                 </label>
               );
